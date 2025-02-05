@@ -1,19 +1,70 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Button from "./Button";
 import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState(null);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  useEffect(() => {
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 1 }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => sections.forEach((section) => observer.unobserve(section));
+  }, []);
+
   return (
-    <nav className="bg-[#f0f0f0f8] shadow-lg">
+    <nav className="bg-[#f0f0f0bb] shadow-lg sticky top-0 z-50 w-full backdrop-blur-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 lg:pr-20">
         <div className="flex justify-between h-[90px]">
-          <motion.div
+          <div className="relative">
+            <div className="absolute left-23 top-8 px-2">
+              <a className="w-28 text-black text-3xl relative text-center cursor-pointer hover:text-gray-900 py-4 pb-1 text-md hover:tracking-widest font-medium link-hover-underline transition-all duration-700">
+                AP
+              </a>
+            </div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5, rotate: 9 }}
+              animate={{ opacity: 1, scale: 1, rotate: 9 }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ scale: 1.1, rotate: 16 }}
+              className="bg-[#444444b6] h-12 w-12 rounded-[10px] absolute left-8 top-5"
+            >
+              <motion.div
+                initial={{ opacity: 0, y: -20, rotate: 82 }}
+                animate={{ opacity: 1, y: 0, rotate: 82 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                whileHover={{ scale: 1.1, rotate: 87 }}
+                className="bg-[#292929e0] h-[37px] w-[37px] rounded-[10px] mx-auto mt-[6px]"
+              >
+                <motion.div
+                  initial={{ rotate: 90 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                  className="text-right mt-1"
+                >
+                  <a className="text-right">{"</>"}</a>
+                </motion.div>
+              </motion.div>
+            </motion.div>
+          </div>
+
+          {/* <motion.div
             initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
@@ -25,13 +76,33 @@ const Navbar = () => {
             >
               AGUSTIN PAEZ
             </Link>
-          </motion.div>
+          </motion.div> */}
           <div className="hidden text-center md:flex py-3 my-3 m-3 p-3 pr-0 mr-0 gap-4">
             {/* <Button text={"INICIO"} target={"inicio"} /> */}
-            <Button text={"SOBRE MI"} target={"about_me"} time={0.1} />
-            <Button text={"TECNOLOGIAS"} target={"tecnologias"} time={0.3} />
-            <Button text={"PROYECTOS"} target={"proyectos"} time={0.5} />
-            <Button text={"CONTACTO"} target={"contacto"} time={0.7} />
+            <Button
+              text={"SOBRE MI"}
+              target={"about_me"}
+              time={0.1}
+              active={activeSection === "about_me"}
+            />
+            <Button
+              text={"TECNOLOGIAS"}
+              target={"tecnologias"}
+              time={0.3}
+              active={activeSection === "tecnologias"}
+            />
+            <Button
+              text={"PROYECTOS"}
+              target={"proyectos"}
+              time={0.5}
+              active={activeSection === "proyectos"}
+            />
+            <Button
+              text={"CONTACTO"}
+              target={"contacto"}
+              time={0.7}
+              active={activeSection === "contacto"}
+            />
           </div>
           <div className="-mr-2 flex md:hidden">
             <button
