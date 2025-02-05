@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState(null);
+  const getThreshold = () => (window.innerWidth < 768 ? 0.2 : 1);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -21,7 +22,7 @@ const Navbar = () => {
           }
         });
       },
-      { threshold: 1 }
+      { threshold: getThreshold() }
     );
 
     sections.forEach((section) => observer.observe(section));
@@ -150,30 +151,30 @@ const Navbar = () => {
 
       <div className={`md:hidden ${isOpen ? "block" : "hidden"}`}>
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          <Link
-            to="/"
-            className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-          >
-            Inicio
-          </Link>
-          <Link
-            to="/about"
-            className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-          >
-            Sobre mí
-          </Link>
-          <Link
-            to="/projects"
-            className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-          >
-            Proyectos
-          </Link>
-          <Link
-            to="/contact"
-            className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-          >
-            Contacto
-          </Link>
+          <Button
+            text={"SOBRE MI"}
+            target={"about_me"}
+            time={0.1}
+            active={activeSection === "about_me"}
+          />
+          <Button
+            text={"TECNOLOGIAS"}
+            target={"tecnologias"}
+            time={0.3}
+            active={activeSection === "tecnologias"}
+          />
+          <Button
+            text={"PROYECTOS"}
+            target={"proyectos"}
+            time={0.5}
+            active={activeSection === "proyectos"}
+          />
+          <Button
+            text={"CONTACTO"}
+            target={"contacto"}
+            time={0.7}
+            active={activeSection === "contacto"}
+          />
         </div>
       </div>
     </nav>

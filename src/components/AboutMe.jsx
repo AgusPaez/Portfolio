@@ -6,13 +6,13 @@ const AboutMe = () => {
   return (
     <section
       id="about_me"
-      className="section w-full h-[40rem] bg-[#d4d4d4] py-16 bg-fixed bg-center bg-cover bg-no-repeat  max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 lg:pr-20"
+      className="section w-full h-auto md:h-[40rem] bg-[#d4d4d4] py-10 md:py-16 bg-fixed bg-center bg-cover bg-no-repeat  max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 lg:pr-20"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center items-center text-center">
         <motion.img
           src={image}
           alt="Foto de perfil"
-          className="w-[20rem] h-[20rem] object-cover rounded-full shadow-lg mb-6"
+          className="w-[15rem] h-[15rem] md:w-[20rem] md:h-[20rem] object-cover rounded-full  shadow-lg mb-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}

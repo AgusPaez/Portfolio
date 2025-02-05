@@ -43,7 +43,7 @@ const Projects = () => {
       ></div>
 
       {/* Contenido de la sección */}
-      <div className="relative h-full w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 lg:pr-20 z-10">
+      <div className="relative h-full w-full max-w-7xl mx-auto px-8 sm:px-6 lg:px-10 lg:pr-20 z-10">
         <motion.h2
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}

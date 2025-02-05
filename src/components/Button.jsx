@@ -14,10 +14,10 @@ const Button = ({ text, target, time, active }) => {
       initial={{ x: 100, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut", delay: time }}
-      className="relative group"
+      className="relative group md:ml-0 ml-2.5"
     >
       <div
-        className={`bg-gray-700 rounded-4xl w-[13.5px] h-[13.5px] absolute bottom-2 left-[-7px] 
+        className={`bg-gray-700 rounded-4xl w-[13.5px]  h-[13.5px] absolute bottom-2 left-[-7px] 
         transition-opacity duration-500 ${
           active
             ? "opacity-100 animate-pulse"
