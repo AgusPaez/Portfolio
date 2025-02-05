@@ -6,6 +6,16 @@ import Projects from "../components/Projects";
 import Contact from "../components/Contact";
 import Technologies from "../components/Technologies";
 import ScrollToTopButton from "../components/ScrollToTopButton";
+//mobile
+import AboutMeMobile from "../components/mobile/AboutMeMobile";
+import TechnologiesMobile from "../components/mobile/TechnologiesMobile";
+import ContactMobile from "../components/mobile/ContactMobile";
+
+function isMobileView() {
+  return window.innerWidth <= 768 ? "mobile" : "desktop";
+}
+
+const deviceType = isMobileView();
 
 function HomePage() {
   return (
@@ -23,10 +33,13 @@ function HomePage() {
         ></div>
 
         <div className="relative z-10">
-          <AboutMe />
-          <Technologies />
+          {/* Usando un ternario para decidir qué componente renderizar */}
+          {deviceType === "mobile" ? <AboutMeMobile /> : <AboutMe />}
+          {deviceType === "mobile" ? <TechnologiesMobile /> : <Technologies />}
+
           <Projects />
-          <Contact />
+          {deviceType === "mobile" ? <ContactMobile /> : <Contact />}
+          {/* <Contact /> */}
           <ScrollToTopButton />
         </div>
       </main>
