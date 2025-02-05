@@ -5,13 +5,13 @@ const Technologies = () => {
   const techs = [
     {
       name: "react-original",
-      gradient: "from-blue-500 to-cyan-500",
+      gradient: "from-blue-600 to-cyan-800",
       nombre: "React",
       time: 0.3,
     },
     {
       name: "javascript-plain",
-      gradient: "from-yellow-400 to-yellow-600",
+      gradient: "from-yellow-600 to-yellow-700",
       nombre: "JavaScript",
       time: 0.7,
     },
@@ -102,53 +102,6 @@ const Technologies = () => {
                 viewport={{ once: true, amount: 0.2 }}
                 className="relative flex flex-col items-center p-3 rounded-lg shadow-lg transition transform hover:scale-110 duration-200 overflow-hidden"
               >
-                {/* ZOOM */}
-                {/* <motion.div
-                  hidden: (i) => ({
-                    scale: 0.5, // Comienza más pequeño
-                    opacity: 0,
-                    transition: {
-                      duration: 0.6,
-                      ease: "easeOut",
-                      delay: i * 0.2,
-                    },
-                  }),
-                  visible: (i) => ({
-                    scale: 1, // Llega a su tamaño normal
-                    opacity: 1,
-                    transition: {
-                      duration: 0.6,
-                      ease: "easeOut",
-                      delay: i * 0.2,
-                    },
-                  }),
-                }}
-                 */}
-                {/* DCHA A IZQ */}
-                {/* 
-                  hidden: (i) => ({
-                    x: 100,
-                    opacity: 0,
-                    transition: {
-                      duration: 1,
-                      ease: "easeOut",
-                      delay: i * 0.12,
-                    },
-                  }),
-                  visible: (i) => ({
-                    x: 0,
-                    opacity: 1,
-                    transition: {
-                      duration: 0.3,
-                      ease: "easeOut",
-                      delay: i * 0.12,
-                    },
-                  }),
-                }}
-                */}
-                {/* <div
-                className={`relative flex flex-col items-center p-3 rounded-lg shadow-lg transition transform hover:scale-110 duration-200 overflow-hidden `}
-              > */}
                 <div
                   className={`absolute inset-0 bg-gradient-to-br ${tech.gradient} opacity-35`}
                 ></div>
@@ -159,7 +112,36 @@ const Technologies = () => {
                 {/* </div> */}
               </motion.div>
 
-              <a className="text-center">{tech.nombre}</a>
+              <motion.a
+                key={index}
+                custom={tech.time}
+                variants={{
+                  hidden: (i) => ({
+                    scale: 0.82,
+                    opacity: 0,
+                    transition: {
+                      duration: 0.3,
+                      ease: "easeOut",
+                      delay: i * 0.2,
+                    },
+                  }),
+                  visible: (i) => ({
+                    scale: 0.9,
+                    opacity: 1,
+                    transition: {
+                      duration: 0.7,
+                      ease: "easeOut",
+                      delay: i * 0.3,
+                    },
+                  }),
+                }}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                className="relative text-center flex flex-col items-center p-3 text-md overflow-hidden"
+              >
+                {tech.nombre}
+              </motion.a>
             </div>
           ))}
         </div>
