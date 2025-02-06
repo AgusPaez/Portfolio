@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import Button from "./Button";
 import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState(null);
+  const [deviceType, setDeviceType] = useState(
+    window.innerWidth <= 768 ? "mobile" : "desktop"
+  );
+
   const getThreshold = () => (window.innerWidth < 768 ? 0.2 : 1);
 
   const toggleMenu = () => {
@@ -13,6 +16,12 @@ const Navbar = () => {
   };
 
   useEffect(() => {
+    const handleResize = () => {
+      setDeviceType(window.innerWidth <= 768 ? "mobile" : "desktop");
+    };
+
+    window.addEventListener("resize", handleResize);
+
     const sections = document.querySelectorAll("section");
     const observer = new IntersectionObserver(
       (entries) => {
@@ -27,7 +36,10 @@ const Navbar = () => {
 
     sections.forEach((section) => observer.observe(section));
 
-    return () => sections.forEach((section) => observer.unobserve(section));
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      sections.forEach((section) => observer.unobserve(section));
+    };
   }, []);
 
   return (
@@ -65,87 +77,76 @@ const Navbar = () => {
             </motion.div>
           </div>
 
-          {/* <motion.div
-            initial={{ x: -100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            className="flex justify-center"
-          >
-            <Link
-              to="/"
-              className="text-[#202020] text-2xl font-bold py-2 px-4 my-6 border-[3px] tracking-widest flex items-center justify-center"
-            >
-              AGUSTIN PAEZ
-            </Link>
-          </motion.div> */}
-          <div className="hidden text-center md:flex py-3 my-3 m-3 p-3 pr-0 mr-0 gap-4">
-            {/* <Button text={"INICIO"} target={"inicio"} /> */}
-            <Button
-              text={"SOBRE MI"}
-              target={"about_me"}
-              time={0.1}
-              active={activeSection === "about_me"}
-            />
-            <Button
-              text={"TECNOLOGIAS"}
-              target={"tecnologias"}
-              time={0.3}
-              active={activeSection === "tecnologias"}
-            />
-            <Button
-              text={"PROYECTOS"}
-              target={"proyectos"}
-              time={0.5}
-              active={activeSection === "proyectos"}
-            />
-            <Button
-              text={"CONTACTO"}
-              target={"contacto"}
-              time={0.7}
-              active={activeSection === "contacto"}
-            />
-          </div>
-          <div className="-mr-2 flex md:hidden">
-            <button
-              onClick={toggleMenu}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
-            >
-              <span className="sr-only">Abrir menú</span>
-              {isOpen ? (
-                <svg
-                  className="block h-6 w-6"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  className="block h-6 w-6"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16m-7 6h7"
-                  />
-                </svg>
-              )}
-            </button>
-          </div>
+          {deviceType === "desktop" ? (
+            <div className="hidden text-center md:flex py-3 my-3 m-3 p-3 pr-0 mr-0 gap-4">
+              <Button
+                text={"SOBRE MI"}
+                target={"about_me"}
+                time={0.1}
+                active={activeSection === "about_me"}
+              />
+              <Button
+                text={"TECNOLOGIAS"}
+                target={"tecnologias"}
+                time={0.3}
+                active={activeSection === "tecnologias"}
+              />
+              <Button
+                text={"PROYECTOS"}
+                target={"proyectos"}
+                time={0.5}
+                active={activeSection === "proyectos"}
+              />
+              <Button
+                text={"CONTACTO"}
+                target={"contacto"}
+                time={0.7}
+                active={activeSection === "contacto"}
+              />
+            </div>
+          ) : (
+            <div className="-mr-2 flex md:hidden">
+              <button
+                onClick={toggleMenu}
+                className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+              >
+                <span className="sr-only">Abrir menú</span>
+                {isOpen ? (
+                  <svg
+                    className="block h-6 w-6"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                ) : (
+                  <svg
+                    className="block h-6 w-6"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 6h16M4 12h16m-7 6h7"
+                    />
+                  </svg>
+                )}
+              </button>
+            </div>
+          )}
         </div>
       </div>
 
