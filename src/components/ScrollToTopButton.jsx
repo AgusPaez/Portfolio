@@ -23,10 +23,9 @@ const ScrollToTopButton = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
       transition={{ duration: 0.4 }}
-      className="fixed bottom-12 right-10 bg-gray-800 text-gray-300 hover:text-black cursor-pointer rounded-full shadow-lg hover:bg-gray-300 transition-all duration-500"
+      className="fixed bottom-12 right-10 bg-gray-800 text-gray-300 hover:text-black cursor-pointer rounded-full shadow-lg hover:bg-gray-300 transition-all duration-500 z-50"
       aria-label="Volver arriba"
     >
-      {/* Flecha SVG (sin necesidad de instalar react-icons) */}
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="3.7em"
