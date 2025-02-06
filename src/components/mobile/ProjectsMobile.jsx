@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 const techs = [
   {
     name: "react-original",
@@ -101,7 +99,7 @@ const projects = [
   },
 ];
 
-const Projects = () => {
+const ProjectsMobile = () => {
   return (
     <section
       id="proyectos"
@@ -118,48 +116,15 @@ const Projects = () => {
       ></div>
 
       <div className="relative h-full w-full max-w-7xl mx-auto px-8 sm:px-6 lg:px-10 lg:pr-20 z-10">
-        <motion.h2
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.1 }}
-          viewport={{ once: true, amount: 0.5 }}
-          className="text-gray-600 font-semibold text-center tracking-wide text-3xl mb-10"
-        >
+        <h2 className="text-gray-600 font-semibold text-center tracking-wide text-3xl mb-10">
           Mis Proyectos
-        </motion.h2>
+        </h2>
 
         <div className="grid md:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <motion.div
+            <div
               key={project.id}
               className="bg-gray-100 h-[32rem] shadow-lg rounded-2xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
-              // initial={{ x: -200, opacity: 0 }}
-              // animate={{ x: 0, opacity: 1 }}
-              // transition={{ duration: 0.6, delay: index * 0.6 }}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-              custom={project.time}
-              variants={{
-                hidden: (i) => ({
-                  scale: 0.82,
-                  opacity: 0,
-                  transition: {
-                    duration: 0.3,
-                    ease: "easeOut",
-                    delay: i * 0.2,
-                  },
-                }),
-                visible: (i) => ({
-                  scale: 0.9,
-                  opacity: 1,
-                  transition: {
-                    duration: 0.7,
-                    ease: "easeOut",
-                    delay: i * 0.3,
-                  },
-                }),
-              }}
             >
               <div className="relative group">
                 <img
@@ -203,7 +168,7 @@ const Projects = () => {
                   Ver Proyecto →
                 </a>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
@@ -211,4 +176,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default ProjectsMobile;
