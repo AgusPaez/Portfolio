@@ -11,6 +11,8 @@ import AboutMeMobile from "../components/mobile/AboutMeMobile";
 import TechnologiesMobile from "../components/mobile/TechnologiesMobile";
 import ContactMobile from "../components/mobile/ContactMobile";
 import ProjectsMobile from "../components/mobile/ProjectsMobile";
+//bg
+import fondoImg from "../assets/fondoOpt.jpeg";
 
 function isMobileView() {
   return window.innerWidth <= 768 ? "mobile" : "desktop";
@@ -23,17 +25,20 @@ function HomePage() {
     <div className="bg-gray-100">
       <Navbar />
       <main className="relative h-[100%]">
-        <div
-          className="absolute top-0 left-0 w-full h-full z-0"
-          style={{
-            backgroundImage:
-              "url('https://images.pexels.com/photos/235994/pexels-photo-235994.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')",
-            filter: "blur(2px)",
-            backgroundAttachment: "fixed",
-          }}
-        ></div>
+        {deviceType === "desktop" ? (
+          <div
+            className="absolute top-0 left-0 w-full h-full z-0"
+            style={{
+              backgroundImage: `url(${fondoImg})`,
+              filter: "blur(2px)",
+              backgroundAttachment: "fixed",
+            }}
+          ></div>
+        ) : (
+          <></>
+        )}
 
-        <div className="relative z-10">
+        <div className="relative ">
           {deviceType === "mobile" ? (
             <>
               <AboutMeMobile />

@@ -1,107 +1,20 @@
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-
-const techs = [
-  {
-    name: "react-original",
-    gradient: "from-blue-600 to-cyan-800",
-    nombre: "React",
-    time: 0.3,
-  },
-  {
-    name: "javascript-plain",
-    gradient: "from-yellow-600 to-yellow-700",
-    nombre: "JavaScript",
-    time: 0.7,
-  },
-  {
-    name: "typescript-plain",
-    gradient: "from-blue-400 to-blue-700",
-    nombre: "TypeScript",
-    time: 1.1,
-  },
-  {
-    name: "mongodb-plain",
-    gradient: "from-green-400 to-green-700",
-    nombre: "MongoDB",
-    time: 1.5,
-  },
-  {
-    name: "html5-plain",
-    gradient: "from-orange-500 to-red-500",
-    nombre: "HTML",
-    time: 1.9,
-  },
-  {
-    name: "css3-plain",
-    gradient: "from-blue-500 to-indigo-500",
-    nombre: "CSS",
-    time: 2.3,
-  },
-  {
-    name: "tailwindcss-original",
-    gradient: "from-teal-400 to-teal-600",
-    nombre: "TailwindCss",
-    time: 2.7,
-  },
-  {
-    name: "angularjs-plain",
-    gradient: "from-red-500 to-red-700",
-    nombre: "Angular",
-    time: 3.1,
-  },
-  {
-    name: "nodejs-plain",
-    gradient: "from-green-500 to-green-700",
-    nombre: "Node.Js",
-    time: 3.5,
-  },
-];
-
-const projects = [
-  {
-    id: 1,
-    title: "Psico App",
-    description: "Un sitio web que permite el manejo de pacientes",
-    image:
-      "https://blog.magezon.com/wp-content/uploads/2022/03/image-32-1024x526.png",
-    image2:
-      "https://i.pinimg.com/736x/bd/e7/01/bde701ce79f7ddda2dfb7b6886eb221b.jpg",
-    link: "https://tuecommerce.com",
-    techs: ["react-original", "tailwindcss-original", "firebase-plain"],
-    time: 0.4,
-  },
-  {
-    id: 2,
-    title: "Dashboard de Análisis",
-    description: "Panel de control con gráficos interactivos y API.",
-    image:
-      "https://blog.magezon.com/wp-content/uploads/2022/03/image-32-1024x526.png",
-    image2:
-      "https://i.pinimg.com/736x/bd/e7/01/bde701ce79f7ddda2dfb7b6886eb221b.jpg",
-    link: "https://tudashboard.com",
-    techs: [
-      "react-original",
-      "typescript-plain",
-      "nodejs-plain",
-      "mongodb-plain",
-    ],
-    time: 0.7,
-  },
-  {
-    id: 3,
-    title: "Blog Personal",
-    description: "Un blog moderno con Next.js y CMS integrado.",
-    image:
-      "https://blog.magezon.com/wp-content/uploads/2022/03/image-32-1024x526.png",
-    image2:
-      "https://i.pinimg.com/736x/bd/e7/01/bde701ce79f7ddda2dfb7b6886eb221b.jpg",
-    link: "https://tublog.com",
-    techs: ["nextjs-original", "typescript-plain", "tailwindcss-original"],
-    time: 0.9,
-  },
-];
+//import constants
+import { projects, techs } from "../constants/constants";
+import Modal from "./Modal";
 
 const Projects = () => {
+  // States
+  const [modal, setModal] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  // Open modal function and set Project to send
+  const OpenModal = (project) => {
+    setModal(!modal);
+    setSelectedProject(project);
+  };
+
   return (
     <section
       id="proyectos"
@@ -116,7 +29,6 @@ const Projects = () => {
           backgroundAttachment: "fixed",
         }}
       ></div>
-
       <div className="relative h-full w-full max-w-7xl mx-auto px-8 sm:px-6 lg:px-10 lg:pr-20 z-10">
         <motion.h2
           initial={{ opacity: 0, y: 50 }}
@@ -132,10 +44,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
-              className="bg-gray-100 h-[32rem] shadow-lg rounded-2xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
-              // initial={{ x: -200, opacity: 0 }}
-              // animate={{ x: 0, opacity: 1 }}
-              // transition={{ duration: 0.6, delay: index * 0.6 }}
+              className="bg-gray-100 h-[33rem] shadow-lg rounded-2xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
@@ -170,7 +79,7 @@ const Projects = () => {
                 <img
                   src={project.image2}
                   alt={project.title}
-                  className="w-full h-64 object-cover absolute inset-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
+                  className="w-full h-64 object-contain absolute inset-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
                 />
               </div>
               <div className="px-3 pb-1 pt-0.5 m-2 mb-1 min-h-11 h-1/2">
@@ -198,15 +107,48 @@ const Projects = () => {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-gray-700 absolute bottom-3 text-white px-5 py-2 rounded-lg text-sm hover:bg-gray-900 transition-all hover:scale-105"
+                  className="bg-gray-700 flex absolute bottom-3 gap-2 right-4 text-white px-4 py-2 rounded-lg text-sm hover:bg-gray-900 transition-all hover:scale-105"
                 >
-                  Ver Proyecto →
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1.3em"
+                    height="1.3em"
+                    viewBox="0 0 24 24"
+                    className="rotate-180"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M6.325 12.85q-.225-.15-.337-.375T5.874 12t.113-.475t.337-.375l8.15-5.175q.125-.075.263-.112T15 5.825q.4 0 .7.288t.3.712v10.35q0 .425-.3.713t-.7.287q-.125 0-.262-.038t-.263-.112z"
+                    />
+                  </svg>
+                  Ver Proyecto
+                </a>
+                <a
+                  onClick={() => OpenModal(project)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gray-500 flex gap-1 absolute cursor-pointer bottom-3 left-4 text-white px-4 py-2 rounded-lg text-sm hover:bg-gray-700 transition-all hover:scale-105"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1.1em"
+                    height="1.1em"
+                    viewBox="0 0 24 24"
+                    className="my-auto"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M11 17h2v-6h-2zm1-8q.425 0 .713-.288T13 8t-.288-.712T12 7t-.712.288T11 8t.288.713T12 9m0 13q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22"
+                    />
+                  </svg>
+                  Mas informacion
                 </a>
               </div>
             </motion.div>
           ))}
         </div>
       </div>
+      {modal && <Modal onClose={OpenModal} project={selectedProject} />}
     </section>
   );
 };

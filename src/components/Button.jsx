@@ -49,18 +49,26 @@ const Button = ({ text, target, time, active }) => {
         </motion.div>
       ) : (
         <div className="relative group ml-7.5">
-          <div
-            className={`bg-gray-700 rounded-4xl w-[13.5px] h-[13.5px] absolute bottom-[9px] left-[-7px] 
+          {active ? (
+            <div
+              className={`bg-gray-700 rounded-4xl w-[13.5px] h-[13.5px] absolute bottom-[9px] left-[-7px] 
         transition-opacity duration-500`}
-          >
-            <a className="text-[8px] relative bottom-2 font-extrabold">
-              {"</>"}
-            </a>
-          </div>
+            >
+              <a className="text-[8px] relative bottom-2 font-extrabold">
+                {"</>"}
+              </a>
+            </div>
+          ) : (
+            <></>
+          )}
 
           <button
             onClick={scrollToTarget}
-            className={`relative text-center text-gray-500 cursor-pointer px-3 py-4 pb-1 text-md hover:tracking-widest font-medium transition-all duration-700`}
+            className={`relative text-center text-gray-500 cursor-pointer px-3 py-4 pb-1 text-md hover:tracking-widest font-medium transition-all duration-700     ${
+              active
+                ? "link-hover-underline-active text-gray-800"
+                : "hover:text-gray-800 link-hover-underline"
+            }`}
           >
             {text}
           </button>
