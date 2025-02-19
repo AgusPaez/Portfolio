@@ -15,58 +15,97 @@ import patientImg from "../assets/patient.png";
 
 export const techs = [
   {
-    name: "react-original",
-    gradient: "from-blue-600 to-cyan-800",
-    nombre: "React",
+    name: "javascript-plain",
+    gradient: "bg-gradient-to-br from-yellow-500 via-amber-600 to-yellow-600",
+    nombre: "JavaScript",
     time: 0.3,
   },
   {
-    name: "javascript-plain",
-    gradient: "from-yellow-600 to-yellow-700",
-    nombre: "JavaScript",
+    name: "typescript-plain",
+    gradient: "bg-gradient-to-br from-blue-400 via-sky-500 to-blue-700",
+    nombre: "TypeScript",
     time: 0.7,
   },
   {
-    name: "typescript-plain",
-    gradient: "from-blue-400 to-blue-700",
-    nombre: "TypeScript",
+    name: "react-original",
+    gradient: "bg-gradient-to-br from-blue-500 via-cyan-600 to-cyan-700",
+    nombre: "React",
     time: 1.1,
   },
   {
-    name: "mongodb-plain",
-    gradient: "from-green-400 to-green-700",
-    nombre: "MongoDB",
+    name: "angularjs-plain",
+    gradient: "bg-gradient-to-br from-red-500 via-rose-500 to-red-700",
+    nombre: "Angular",
     time: 1.5,
   },
   {
     name: "html5-plain",
-    gradient: "from-orange-500 to-red-500",
+    gradient: "bg-gradient-to-br from-orange-500 via-amber-400 to-red-500",
     nombre: "HTML",
     time: 1.9,
   },
   {
     name: "css3-plain",
-    gradient: "from-blue-500 to-indigo-500",
+    gradient: "bg-gradient-to-br from-blue-500 via-indigo-400 to-indigo-500",
     nombre: "CSS",
     time: 2.3,
   },
   {
     name: "tailwindcss-original",
-    gradient: "from-teal-400 to-teal-600",
+    gradient: "bg-gradient-to-br from-teal-400 via-cyan-400 to-teal-600",
     nombre: "TailwindCss",
     time: 2.7,
   },
   {
-    name: "angularjs-plain",
-    gradient: "from-red-500 to-red-700",
-    nombre: "Angular",
+    name: "nodejs-plain",
+    gradient: "bg-gradient-to-br from-green-500 via-lime-500 to-green-700",
+    nombre: "Node.Js",
     time: 3.1,
   },
   {
-    name: "nodejs-plain",
-    gradient: "from-green-500 to-green-700",
-    nombre: "Node.Js",
+    name: "mongodb-plain",
+    gradient: "bg-gradient-to-br from-green-400 via-emerald-500 to-green-700",
+    nombre: "MongoDB",
     time: 3.5,
+  },
+];
+
+export const tools = [
+  {
+    name: "vscode-plain colored",
+    gradient: "bg-gradient-to-br from-blue-500 via-cyan-500 to-blue-700",
+    nombre: "Visual Studio Code",
+    time: 0.3,
+  },
+  {
+    name: "intellij-plain",
+    gradient: "bg-gradient-to-br from-yellow-500 via-red-500 to-blue-400",
+    nombre: "Intellij IDEA",
+    time: 0.7,
+  },
+  {
+    name: "postman-plain colored",
+    gradient: "bg-gradient-to-br from-orange-500 via-amber-500 to-orange-700",
+    nombre: "Postman",
+    time: 1.1,
+  },
+  {
+    name: "insomnia-plain colored",
+    gradient: "bg-gradient-to-br from-indigo-500 via-purple-500 to-indigo-700",
+    nombre: "Insomnia",
+    time: 1.5,
+  },
+  {
+    name: "vercel-original",
+    gradient: "bg-gradient-to-br from-gray-700 via-neutral-500 to-gray-900",
+    nombre: "Vercel",
+    time: 1.9,
+  },
+  {
+    name: "render",
+    gradient: "bg-gradient-to-br from-gray-700 via-neutral-500 to-gray-900",
+    nombre: "Render",
+    time: 2.3,
   },
 ];
 
