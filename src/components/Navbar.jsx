@@ -9,7 +9,7 @@ const Navbar = () => {
     window.innerWidth <= 768 ? "mobile" : "desktop"
   );
 
-  const getThreshold = () => (window.innerWidth < 768 ? 0.2 : 1);
+  const getThreshold = () => (window.innerWidth < 768 ? 0.2 : 0.8);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
