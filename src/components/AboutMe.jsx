@@ -16,7 +16,7 @@ const AboutMe = () => {
     <LazyMotion features={domAnimation} strict>
       <section
         id="about_me"
-        className="section w-full h-auto md:h-[40rem] bg-[#d4d4d4] py-10 md:py-16 bg-fixed bg-center bg-cover bg-no-repeat max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 lg:pr-20"
+        className="section w-full h-auto md:h-[42rem] bg-[#cecece] py-10 md:py-16 bg-fixed bg-center bg-cover bg-no-repeat max-w-[81rem] mx-auto px-4 sm:px-6 lg:px-10 lg:pr-20  2xl:max-w-[86.5rem]"
       >
         <m.div
           className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center items-center text-center"

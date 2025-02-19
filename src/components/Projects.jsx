@@ -18,17 +18,21 @@ const Projects = () => {
   return (
     <section
       id="proyectos"
-      className="relative py-12 bg-gray-800 bg-fixed bg-center bg-cover bg-no-repeat"
+      className="relative  pb-28 pt-[95px]  bg-gray-800 bg-fixed bg-center bg-cover bg-no-repeat"
     >
-      <div
-        className="absolute top-0 left-0 w-full h-full z-0"
-        style={{
-          backgroundImage:
-            "url('https://images.pexels.com/photos/235994/pexels-photo-235994.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')",
-          filter: "blur(2px)",
-          backgroundAttachment: "fixed",
-        }}
-      ></div>
+      <div className="absolute top-0 left-0 w-full h-full z-0 overflow-hidden">
+        <div
+          className="absolute top-0 left-0 w-full h-full"
+          style={{
+            backgroundImage:
+              "url('https://images.pexels.com/photos/235994/pexels-photo-235994.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')",
+
+            backgroundAttachment: "fixed",
+          }}
+        ></div>
+        <div className="absolute top-0 left-0 w-full h-full backdrop-blur-[2px]"></div>
+      </div>
+
       <div className="relative h-full w-full max-w-7xl mx-auto px-8 sm:px-6 lg:px-10 lg:pr-20 z-10">
         <motion.h2
           initial={{ opacity: 0, y: 50 }}
