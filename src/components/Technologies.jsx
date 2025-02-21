@@ -6,21 +6,21 @@ import { tools } from "../constants/constants";
 const Technologies = () => {
   return (
     <>
-      <section
-        id="tecnologias"
-        className="bg-gradient-to-b  from-[#dfdfdf] to-[#cbcbcb]"
-      >
-        <div className="text-gray-800 pb-28 pt-[90px]  text-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 lg:pr-20 border-b-[0.5px] border-[#ebebebda]">
+      <section id="tecnologias">
+        <div className="text-gray-800 pb-8 pt-[50px] text-center max-w-6xl mx-auto px-4 sm:px-6 lg:px-10 lg:pr-20 border-b-[1.5px] border-[#ffffff]">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.1 }}
             viewport={{ once: true, amount: 0.5 }}
-            className="text-gray-600 font-semibold tracking-wide text-3xl mb-16"
+            className=" tracking-wide font-light mt-5  mb-8 text-[32px] text-gray-700 "
           >
-            Tecnologias
+            <a className=" bg-gradient-to-br from-[#efefef] via-[#ffffff] to-[#efefef] border-[0.5px] shadow border-gray-300 rounded-2xl py-0.5 px-4">
+              {" "}
+              Tecnologias
+            </a>
           </motion.div>
-          <div className="grid grid-cols-3 md:grid-cols-9 gap-10 justify-center items-center">
+          <div className="grid grid-cols-3 md:grid-cols-9 gap-8 justify-center items-center">
             {techs.map((tech, index) => (
               <div key={index} className="relative">
                 <motion.div
@@ -95,19 +95,18 @@ const Technologies = () => {
           </div>
         </div>
       </section>
-      <section
-        id="tecnologias"
-        className="bg-gradient-to-b  from-[#cbcbcb]  to-[#dfdfdf] border-b-2 border-[#ebebebda]"
-      >
-        <div className="text-gray-800 pb-28 pt-[90px] text-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 lg:pr-20 ">
+      <section id="tecnologias" className="section-divider">
+        <div className="text-gray-800 pb-20 pt-[50px] text-center max-w-6xl mx-auto px-4 sm:px-6 lg:px-10 lg:pr-20 ">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.1 }}
             viewport={{ once: true, amount: 0.5 }}
-            className="text-gray-600 font-semibold tracking-wide text-3xl mb-16 "
+            className="font-light tracking-wide text-3xl mt-5 mb-8 text-[32px] text-gray-700 "
           >
-            Herramientas
+            <a className="border-[0.5px] shadow border-gray-300  bg-gradient-to-br from-[#efefef] via-[#ffffff] to-[#efefef] py-0.5 px-4 rounded-2xl">
+              Herramientas
+            </a>
           </motion.div>
           <div className="grid grid-cols-6  gap-0 justify-center items-center">
             {tools.map((tool, index) => (
@@ -186,7 +185,7 @@ const Technologies = () => {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true, amount: 0.2 }}
-                  className="relative text-center flex flex-col items-center p-2 text-md overflow-hidden m-1"
+                  className="relative text-center flex flex-col items-center p-0.5 text-md overflow-hidden m-0.5"
                 >
                   {tool.nombre}
                 </motion.a>
