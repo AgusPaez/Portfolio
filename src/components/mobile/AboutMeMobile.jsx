@@ -13,51 +13,93 @@ const containerVariants = {
 
 const AboutMeMobile = () => {
   return (
-    <section
-      id="about_me"
-      className="section w-full h-auto md:h-[40rem] bg-[#d4d4d4] py-10 md:py-16 bg-fixed bg-center bg-cover bg-no-repeat max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 lg:pr-20"
-    >
-      <motion.div
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center items-center text-center"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.5 }}
-        variants={containerVariants}
-      >
-        <img
+    <section id="about_me" className="section-divider ">
+      <div className="w-full h-auto max-w-6xl mx-auto pb-16 pt-6 px-6 md:flex-row gap-5 flex flex-col-reverse">
+        {" "}
+        <motion.div
+          className="md:text-left"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={containerVariants}
+        >
+          <motion.h2
+            className="text-[36px] font-bold text-gray-900"
+            variants={containerVariants}
+          >
+            Hola, soy <span className="text-blue-900">Agustin Paez</span>
+          </motion.h2>
+          <motion.h3
+            className="text-[23px] text-gray-700 mt-0"
+            variants={containerVariants}
+          >
+            Desarrollador Frontend.
+          </motion.h3>
+          <motion.p
+            className="text-md text-gray-600 mt-4 "
+            variants={containerVariants}
+          >
+            Desarrollador frontend recientemente egresado con conocimientos en
+            tecnologias como: {""}
+            <span className="font-semibold text-blue-900">
+              React.js, Angular y TypeScript
+            </span>
+            . Apasionado por la creación de interfaces intuitivas, accesibles y
+            de alto rendimiento.
+          </motion.p>
+          <motion.p
+            className="text-md text-gray-600 mt-4 "
+            variants={containerVariants}
+          >
+            Estoy en busqueda de nuevas oportunidades para aplicar mis
+            habilidades, aprender de un equipo experimentado y seguir creciendo
+            como profesional. Tengo experiencia desarrollando proyectos
+            personales y académicos que integran tecnologías como{" "}
+            <span className="font-semibold text-blue-900">
+              Node.js, MongoDB y MariaDB {""}
+            </span>
+            entre otras.
+          </motion.p>
+          <motion.p
+            className="text-md text-gray-600 mt-4 "
+            variants={containerVariants}
+          >
+            Comprometido con mi constante crecimiento, me mantengo actualizado
+            con las últimas tendencias del desarrollo web, valorando el código
+            limpio y escalable.
+          </motion.p>
+          <div className="flex gap-4 ">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
+              viewport={{ once: true, amount: 0.5 }}
+              className="text-black flex gap-2 mt-6 text-4xl"
+            >
+              <a
+                href="google.com"
+                className="pr-1 mr-1 scale-110 transition-transform hover:scale-125 duration-300"
+              >
+                <i className="devicon-linkedin-plain text-[32px]"></i>
+              </a>
+              <a
+                href="https://github.com/AgusPaez"
+                className="pr-1 mr-1  scale-110 transition-transform hover:scale-125"
+              >
+                <i className="devicon-github-original text-[32px]"></i>
+              </a>
+            </motion.div>
+          </div>
+        </motion.div>
+        <motion.img
           src={image}
           alt="Foto de perfil"
-          className="w-[15rem] h-[15rem] md:w-[20rem] md:h-[20rem] object-cover rounded-full shadow-lg mb-6"
+          className=" h-60 object-cover rounded-lg shadow-lg"
           loading="lazy"
           variants={containerVariants}
-          whileHover={{ scale: 1.1 }}
+          whileHover={{ scale: 1.05 }}
         />
-
-        <span
-          className="text-2xl font-semibold text-gray-800 mb-4"
-          variants={containerVariants}
-        >
-          Frontend Developer
-        </span>
-
-        <span
-          className="text-lg font-medium text-gray-700 mb-6"
-          variants={containerVariants}
-        >
-          Hola, soy Agustin Paez 👋
-        </span>
-
-        <p
-          className="text-lg text-gray-600 max-w-3xl mx-auto"
-          variants={containerVariants}
-        >
-          Soy un Frontend Developer con pasión por el código limpio y las
-          interacciones fluidas. Mi objetivo es crear sitios web que no solo se
-          vean bien, sino que también se sientan increíbles al usarlos. Cuando
-          no estoy programando, me encuentras explorando nuevas herramientas o
-          disfrutando de un buen café. ☕
-        </p>
-      </motion.div>
+      </div>
     </section>
   );
 };
