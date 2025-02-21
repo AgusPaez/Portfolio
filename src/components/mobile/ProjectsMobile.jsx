@@ -30,15 +30,17 @@ const ProjectsMobile = () => {
       ></div>
 
       <div className="relative h-full w-full max-w-7xl mx-auto px-8 sm:px-6 lg:px-10 lg:pr-20 z-10">
-        <motion.h2
+        <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.1 }}
           viewport={{ once: true, amount: 0.5 }}
-          className="text-gray-600 font-semibold text-center tracking-wide text-3xl mb-10"
+          className=" tracking-wide font-light mt-5 flex justify-center mb-8 text-[32px] text-gray-700"
         >
-          Mis Proyectos
-        </motion.h2>
+          <a className=" bg-gradient-to-br from-[#efefef] via-[#ffffff] to-[#efefef] border-[0.5px] shadow border-gray-300 rounded-2xl py-0.5 px-4">
+            Proyectos
+          </a>
+        </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8">
           {projects.map((project, index) => (

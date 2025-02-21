@@ -74,7 +74,7 @@ export const tools = [
   {
     name: "vscode-plain colored",
     gradient: "bg-gradient-to-br from-blue-500 via-cyan-500 to-blue-700",
-    nombre: "Visual Studio Code",
+    nombre: "VS Code",
     time: 0.3,
   },
   {

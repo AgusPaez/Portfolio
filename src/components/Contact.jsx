@@ -46,7 +46,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contacto" className="pb-10 md:h-[32rem] bg-[#dfdfdf]">
+    <section id="contacto" className="pb-10 md:h-[32rem] ">
       <div className="h-full w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 lg:pr-20 md:flex pt-10 ">
         <div className="md:w-1/2 py-8 md:pr-40">
           <motion.div
@@ -107,7 +107,7 @@ const Contact = () => {
               name="nombre"
               value={formData.nombre}
               onChange={handleChange}
-              className="bg-[#ececec] h-[150%] md:h-[80%] w-full text-gray-700 px-5 placeholder:text-gray-500  hover:tracking-wider transition-all duration-300"
+              className="bg-[#ffffff] border-[0.5px] border-[#ececec] hover:border-gray-300 h-[150%] md:h-[80%] w-full text-gray-800 px-5 placeholder:text-gray-600  hover:tracking-wider transition-all duration-500"
               placeholder="Nombre"
             />
           </motion.div>
@@ -122,7 +122,7 @@ const Contact = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="bg-[#ececec] h-[150%] md:h-[80%] w-full text-gray-700 px-5 placeholder:text-gray-500 hover:tracking-wide transition-all duration-300"
+              className="bg-[#ffffff] border-[0.5px] border-[#ececec] hover:border-gray-300 h-[150%] md:h-[80%] w-full text-gray-800 px-5 placeholder:text-gray-600 hover:tracking-wide transition-all duration-500"
               placeholder="Correo Electronico"
             />
           </motion.div>
@@ -136,7 +136,7 @@ const Contact = () => {
               name="mensaje"
               value={formData.mensaje}
               onChange={handleChange}
-              className="bg-[#ececec] h-[250%] md:h-[185%] w-full text-gray-700 px-5 pt-3 placeholder:text-gray-500  hover:tracking-wide transition-all duration-300 resize-none"
+              className="bg-[#ffffff] border-[0.5px] border-[#ececec] hover:border-gray-300 h-[250%] md:h-[185%] w-full text-gray-800 px-5 pt-3 placeholder:text-gray-600  hover:tracking-wide transition-all duration-500 resize-none"
               placeholder="Escribi tu mensaje aca"
             />
           </motion.div>

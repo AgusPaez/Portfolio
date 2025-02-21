@@ -18,7 +18,7 @@ const Projects = () => {
   return (
     <section
       id="proyectos"
-      className="relative  pb-28 pt-[95px]  bg-gray-800 bg-fixed bg-center bg-cover bg-no-repeat"
+      className="relative  pb-28 pt-[95px]  bg-gray-800 bg-fixed bg-center bg-cover bg-no-repeat "
     >
       <div className="absolute top-0 left-0 w-full h-full z-0 overflow-hidden">
         <div
@@ -39,9 +39,11 @@ const Projects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.1 }}
           viewport={{ once: true, amount: 0.5 }}
-          className="text-gray-600 font-semibold text-center tracking-wide text-3xl mb-10"
+          className="text-center mb-10 font-light tracking-wide  mt-5 text-[32px] text-gray-700 "
         >
-          Mis Proyectos
+          <a className=" bg-gradient-to-br from-[#efefef] via-[#ffffff] to-[#efefef] border-[0.5px] shadow border-gray-300  py-0.5 px-4 rounded-2xl">
+            Mis Proyectos
+          </a>
         </motion.h2>
 
         <div className="grid md:grid-cols-3 gap-8">
