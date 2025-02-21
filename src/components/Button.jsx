@@ -9,7 +9,10 @@ const Button = ({ text, target, time, active }) => {
   const scrollToTarget = () => {
     const element = document.getElementById(target);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      const offset = 90;
+      const elementPosition =
+        element.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({ top: elementPosition - offset, behavior: "smooth" });
     }
   };
 
