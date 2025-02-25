@@ -20,11 +20,11 @@ const ProjectsMobile = () => {
       className="relative py-12 bg-gray-800 bg-fixed bg-center bg-cover bg-no-repeat"
     >
       <div
-        className="absolute top-0 left-0 w-full h-full z-0"
+        className="absolute top-0 left-0 w-full h-full z-0 "
         style={{
           backgroundImage:
             "url('https://images.pexels.com/photos/235994/pexels-photo-235994.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')",
-          filter: "blur(2px)",
+          filter: "blur(2px) brightness(80%)",
           backgroundAttachment: "scroll",
         }}
       ></div>
@@ -37,7 +37,7 @@ const ProjectsMobile = () => {
           viewport={{ once: true, amount: 0.5 }}
           className=" tracking-wide font-light mt-5 flex justify-center mb-8 text-[32px] text-gray-700"
         >
-          <a className=" bg-gradient-to-br from-[#efefef] via-[#ffffff] to-[#efefef] border-[0.5px] shadow border-gray-300 rounded-2xl py-0.5 px-4">
+          <a className=" bg-gradient-to-br from-[#efefef] via-[#ffffff] to-[#efefef] border-[0.5px] shadow border-gray-300 rounded-2xl py-0.5 px-4 dark:bg-gradient-to-br dark:from-[#364050] dark:via-[#3a4455] dark:to-[#364050] dark:border-gray-700 dark:text-[#EAEAEA]">
             Proyectos
           </a>
         </motion.div>
@@ -50,7 +50,7 @@ const ProjectsMobile = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
               viewport={{ once: true, amount: 0.4 }}
-              className="bg-gray-100 h-auto shadow-lg rounded-2xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+              className="bg-gray-100 dark:bg-gradient-to-br dark:from-[#313b49] dark:via-[#343d4d] dark:to-[#313b49] h-auto shadow-lg rounded-2xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
             >
               <div className="relative group">
                 <img
@@ -65,17 +65,19 @@ const ProjectsMobile = () => {
                 />
               </div>
               <div className="px-3 pb-1 pt-0.5 m-2 mb-1 min-h-11 h-1/2">
-                <h3 className="text-xl font-semibold text-gray-800">
+                <h3 className="text-xl font-semibold text-gray-800 dark:text-[#EAEAEA]">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 my-2">{project.description}</p>
+                <p className="text-gray-600 my-2 dark:text-[#cfcfcf]">
+                  {project.description}
+                </p>
                 <div className="flex flex-wrap gap-1.5 ">
                   {project.techs.map((techName) => {
                     const tech = techs.find((t) => t.name === techName);
                     return tech ? (
                       <div
                         key={techName}
-                        className={`px-1 py-0.5 text-sm font-medium text-white rounded-lg bg-gradient-to-r ${tech.gradient} flex items-center gap-2`}
+                        className={`px-1 py-0.5 text-sm font-medium text-white rounded-lg dark:opacity-95 bg-gradient-to-r ${tech.gradient} flex items-center gap-2`}
                       >
                         <i
                           className={`devicon-${tech.name} colored text-lg`}
@@ -90,7 +92,7 @@ const ProjectsMobile = () => {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-gray-700 flex bottom-3 text-white px-5 py-2 rounded-lg text-sm hover:bg-gray-900 transition-all hover:scale-105"
+                    className="bg-gray-700 dark:bg-gray-600 flex bottom-3 text-white px-5 py-2 rounded-lg text-sm hover:bg-gray-900 transition-all hover:scale-105"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
