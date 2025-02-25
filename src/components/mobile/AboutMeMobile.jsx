@@ -20,48 +20,51 @@ const AboutMeMobile = () => {
           className="md:text-left"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.4 }}
           variants={containerVariants}
         >
           <motion.h2
-            className="text-[36px] font-bold text-gray-900"
+            className="text-[36px] font-bold text-gray-900 dark:text-[#EAEAEA]"
             variants={containerVariants}
           >
-            Hola, soy <span className="text-blue-900">Agustin Paez</span>
+            Hola, soy{" "}
+            <span className="text-blue-900 dark:text-blue-400">
+              Agustin Paez
+            </span>
           </motion.h2>
           <motion.h3
-            className="text-[23px] text-gray-700 mt-0"
+            className="text-[23px] text-gray-700 dark:text-[#cfcfcf] mt-0"
             variants={containerVariants}
           >
             Desarrollador Frontend.
           </motion.h3>
           <motion.p
-            className="text-md text-gray-600 mt-4 "
+            className="text-md text-gray-600 dark:text-[#c9c9c9] mt-4"
             variants={containerVariants}
           >
             Desarrollador frontend recientemente egresado con conocimientos en
             tecnologias como: {""}
-            <span className="font-semibold text-blue-900">
+            <span className="font-semibold text-blue-900 dark:text-blue-400">
               React.js, Angular y TypeScript
             </span>
             . Apasionado por la creación de interfaces intuitivas, accesibles y
             de alto rendimiento.
           </motion.p>
           <motion.p
-            className="text-md text-gray-600 mt-4 "
+            className="text-md text-gray-600 mt-4 dark:text-[#c9c9c9] "
             variants={containerVariants}
           >
             Estoy en busqueda de nuevas oportunidades para aplicar mis
             habilidades, aprender de un equipo experimentado y seguir creciendo
             como profesional. Tengo experiencia desarrollando proyectos
             personales y académicos que integran tecnologías como{" "}
-            <span className="font-semibold text-blue-900">
+            <span className="font-semibold text-blue-900 dark:text-blue-400">
               Node.js, MongoDB y MariaDB {""}
             </span>
             entre otras.
           </motion.p>
           <motion.p
-            className="text-md text-gray-600 mt-4 "
+            className="text-md text-gray-600 mt-4 dark:text-[#c9c9c9]"
             variants={containerVariants}
           >
             Comprometido con mi constante crecimiento, me mantengo actualizado
@@ -78,15 +81,15 @@ const AboutMeMobile = () => {
             >
               <a
                 href="google.com"
-                className="pr-1 mr-1 scale-110 transition-transform hover:scale-125 duration-300"
+                className="pr-1 mr-1 scale-110 transition-transform hover:scale-125 duration-300 dark:text-[#c9c9c9] dark:hover:text-white"
               >
                 <i className="devicon-linkedin-plain text-[32px]"></i>
               </a>
               <a
                 href="https://github.com/AgusPaez"
-                className="pr-1 mr-1  scale-110 transition-transform hover:scale-125"
+                className="pr-1 mr-1  scale-110 transition-transform hover:scale-125 dark:text-[#c9c9c9] dark:hover:text-white"
               >
-                <i className="devicon-github-original text-[32px]"></i>
+                <i className="devicon-github-original text-[32px] "></i>
               </a>
             </motion.div>
           </div>

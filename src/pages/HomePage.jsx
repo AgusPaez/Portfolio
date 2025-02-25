@@ -24,12 +24,12 @@ const deviceType = isMobileView();
 
 function HomePage() {
   return (
-    <div className="bg-white">
+    <div className="bg-white dark:bg-gray-800 transition-colors duration-1000 ease-in-out">
       <Navbar />
       <main className="relative h-[100%]">
         {deviceType === "desktop" ? (
           <div
-            className="absolute top-0 left-0 w-full h-full z-0 bg-gray-200"
+            className="absolute top-0 left-0 w-full h-full z-0 bg-gray-200 dark:bg-[#24242e] transition-colors duration-1000 ease-in-out"
             // style={{
             //   backgroundImage: `url(${fondoImg})`,
             //   filter: "blur(2px)",
@@ -38,7 +38,7 @@ function HomePage() {
           ></div>
         ) : (
           <div
-            className="absolute top-0 left-0 w-full h-full z-0 bg-gray-200"
+            className="absolute top-0 left-0 w-full h-full z-0 bg-gray-200 dark:bg-[#24242e]"
             // style={{
             //   backgroundImage: `url(${fondoImg})`,
             //   filter: "blur(2px)",

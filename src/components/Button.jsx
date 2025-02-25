@@ -26,26 +26,26 @@ const Button = ({ text, target, time, active }) => {
           className="relative group md:ml-0 ml-2.5"
         >
           <div
-            className={`bg-gray-700 rounded-4xl w-[13.5px]  h-[13.5px] absolute bottom-2 left-[-7px] 
+            className={`bg-gray-700 dark:bg-[#EAEAEA] rounded-4xl w-[13.5px]  h-[13.5px] absolute bottom-2 left-[-7px] 
         transition-opacity duration-500 ${
           active
             ? "opacity-100 animate-pulse"
             : "opacity-0 group-hover:opacity-100 "
         }`}
           >
-            <a className="text-[7px] relative bottom-2 font-extrabold">
+            <a className="text-[7px] relative bottom-2 font-extrabold dark:text-black">
               {"</>"}
             </a>
           </div>
 
           <button
             onClick={scrollToTarget}
-            className={`relative text-center text-gray-500 cursor-pointer px-3 py-4 pb-1 text-md hover:tracking-widest font-medium transition-all duration-700
-          ${
-            active
-              ? "link-hover-underline-active text-gray-800"
-              : "hover:text-gray-800 link-hover-underline"
-          }`}
+            className={`relative text-center text-gray-500 dark:text-[#e7e7e7] cursor-pointer px-3 py-4 pb-1 text-md hover:tracking-widest font-medium transition-all duration-700
+  ${
+    active
+      ? "link-hover-underline-active dark:link-hover-underline-active text-gray-800 dark:text-[#e7e7e7]"
+      : "text-gray-500 dark:text-[#dadada] link-hover-underline"
+  }`}
           >
             {text}
           </button>
@@ -54,10 +54,10 @@ const Button = ({ text, target, time, active }) => {
         <div className="relative group ml-7.5">
           {active ? (
             <div
-              className={`bg-gray-700 rounded-4xl w-[13.5px] h-[13.5px] absolute bottom-[9px] left-[-7px] 
+              className={`bg-gray-700 dark:bg-[#EAEAEA] rounded-4xl w-[13.5px] h-[13.5px] absolute bottom-[9px] left-[-7px] 
         transition-opacity duration-500`}
             >
-              <a className="text-[8px] relative bottom-2 font-extrabold">
+              <a className="text-[8px] relative bottom-2 font-extrabold dark:text-black">
                 {"</>"}
               </a>
             </div>
@@ -69,8 +69,8 @@ const Button = ({ text, target, time, active }) => {
             onClick={scrollToTarget}
             className={`relative text-center text-gray-500 cursor-pointer px-3 py-4 pb-1 text-md hover:tracking-widest font-medium transition-all duration-700     ${
               active
-                ? "link-hover-underline-active text-gray-800"
-                : "hover:text-gray-800 link-hover-underline"
+                ? "link-hover-underline-active dark:link-hover-underline-active text-gray-800 dark:text-[#e7e7e7]"
+                : "text-gray-500 dark:text-[#dadada] link-hover-underline"
             }`}
           >
             {text}
