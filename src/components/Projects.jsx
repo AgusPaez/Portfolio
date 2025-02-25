@@ -22,7 +22,7 @@ const Projects = () => {
     >
       <div className="absolute top-0 left-0 w-full h-full z-0 overflow-hidden">
         <div
-          className="absolute top-0 left-0 w-full h-full"
+          className="absolute top-0 left-0 w-full h-full  dark:brightness-50"
           style={{
             backgroundImage:
               "url('https://images.pexels.com/photos/235994/pexels-photo-235994.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')",
@@ -41,7 +41,7 @@ const Projects = () => {
           viewport={{ once: true, amount: 0.5 }}
           className="text-center mb-10 font-light tracking-wide  mt-5 text-[32px] text-gray-700 "
         >
-          <a className=" bg-gradient-to-br from-[#efefef] via-[#ffffff] to-[#efefef] border-[0.5px] shadow border-gray-300  py-0.5 px-4 rounded-2xl">
+          <a className="bg-gradient-to-br from-[#efefef] via-[#ffffff] to-[#efefef]  dark:bg-gradient-to-br dark:from-[#2f3746] dark:via-[#343d4d] dark:to-[#2f3746] border-[0.5px] shadow border-gray-300 dark:border-gray-700 rounded-2xl py-0.5 px-4 dark:text-[#EAEAEA]">
             Mis Proyectos
           </a>
         </motion.h2>
@@ -50,7 +50,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
-              className="bg-gray-100 h-[33rem] shadow-lg rounded-2xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+              className="bg-gray-100 dark:bg-gradient-to-br dark:from-[#313b49] dark:via-[#343d4d] dark:to-[#313b49] h-[33rem] shadow-lg rounded-2xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
@@ -89,17 +89,19 @@ const Projects = () => {
                 />
               </div>
               <div className="px-3 pb-1 pt-0.5 m-2 mb-1 min-h-11 h-1/2">
-                <h3 className="text-xl font-semibold text-gray-800">
+                <h3 className="text-xl font-semibold text-gray-800 dark:text-[#EAEAEA]">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 my-2">{project.description}</p>
+                <p className="text-gray-600 dark:text-[#cfcfcf] my-2">
+                  {project.description}
+                </p>
                 <div className="flex flex-wrap gap-1.5 ">
                   {project.techs.map((techName) => {
                     const tech = techs.find((t) => t.name === techName);
                     return tech ? (
                       <div
                         key={techName}
-                        className={`px-1 py-0.5 text-sm font-medium text-white rounded-lg bg-gradient-to-r ${tech.gradient} flex items-center gap-2`}
+                        className={`px-1 py-0.5 text-sm font-medium  dark:text-[#ffffff] dark:opacity-95 text-white rounded-lg bg-gradient-to-r ${tech.gradient} flex items-center gap-2`}
                       >
                         <i
                           className={`devicon-${tech.name} colored text-lg`}
@@ -113,7 +115,7 @@ const Projects = () => {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-gray-700 flex absolute bottom-3 gap-2 right-4 text-white px-4 py-2 rounded-lg text-sm hover:bg-gray-900 transition-all hover:scale-105"
+                  className="bg-gray-700 dark:bg-gray-600 flex absolute bottom-3 gap-2 right-4 text-white px-4 py-2 rounded-lg text-sm hover:bg-gray-900 transition-all hover:scale-105"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

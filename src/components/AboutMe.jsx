@@ -25,44 +25,47 @@ const AboutMe = () => {
             variants={containerVariants}
           >
             <m.h2
-              className="text-[40px] font-bold text-gray-900"
+              className="text-[40px] font-bold dark:font-semibold text-gray-900 dark:text-[#EAEAEA]"
               variants={containerVariants}
             >
-              Hola, soy <span className="text-blue-900">Agustin Paez</span>
+              Hola, soy{" "}
+              <span className="text-blue-900 dark:text-blue-400">
+                Agustin Paez
+              </span>
             </m.h2>
             <m.h3
-              className="text-[28px] text-gray-700 mt-0"
+              className="text-[28px] text-gray-700 dark:text-[#cfcfcf] mt-0"
               variants={containerVariants}
             >
               Desarrollador Frontend.
             </m.h3>
             <m.p
-              className="text-md text-gray-600 mt-4 "
+              className="text-md text-gray-600 dark:text-[#c9c9c9] mt-4 "
               variants={containerVariants}
             >
               Desarrollador frontend recientemente egresado con conocimientos en
               tecnologias como: {""}
-              <span className="font-semibold text-blue-900">
+              <span className="font-semibold text-blue-900 dark:text-blue-400">
                 React.js, Angular y TypeScript
               </span>
               . Apasionado por la creación de interfaces intuitivas, accesibles
               y de alto rendimiento.
             </m.p>
             <m.p
-              className="text-md text-gray-600 mt-4 "
+              className="text-md text-gray-600 dark:text-[#c9c9c9] mt-4 "
               variants={containerVariants}
             >
               Estoy en busqueda de nuevas oportunidades para aplicar mis
               habilidades, aprender de un equipo experimentado y seguir
               creciendo como profesional. Tengo experiencia desarrollando
               proyectos personales y académicos que integran tecnologías como{" "}
-              <span className="font-semibold text-blue-900">
+              <span className="font-semibold text-blue-900 dark:text-blue-400">
                 Node.js, MongoDB y MariaDB {""}
               </span>
               entre otras.
             </m.p>
             <m.p
-              className="text-md text-gray-600 mt-4 "
+              className="text-md text-gray-600 mt-4 dark:text-[#c9c9c9]"
               variants={containerVariants}
             >
               Comprometido con mi constante crecimiento, me mantengo actualizado
@@ -81,13 +84,13 @@ const AboutMe = () => {
                   href="google.com"
                   className="pr-1 mr-1 scale-110 transition-transform hover:scale-125 duration-300"
                 >
-                  <i className="devicon-linkedin-plain text-[32px]"></i>
+                  <i className="devicon-linkedin-plain text-[32px] dark:text-[#c9c9c9] dark:hover:text-white"></i>
                 </a>
                 <a
                   href="https://github.com/AgusPaez"
                   className="pr-1 mr-1  scale-110 transition-transform hover:scale-125"
                 >
-                  <i className="devicon-github-original text-[32px]"></i>
+                  <i className="devicon-github-original text-[32px] dark:text-[#c9c9c9] dark:hover:text-white"></i>
                 </a>
               </m.div>
             </div>

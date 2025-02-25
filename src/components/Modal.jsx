@@ -39,8 +39,8 @@ const Modal = ({ onClose, project }) => {
   const filteredImages = images.filter(Boolean);
 
   return (
-    <div className="fixed inset-0 z-[60] flex items-center justify-center w-full h-full bg-[#2c2c2cbe] bg-opacity-50">
-      <div className="text-gray-700 relative w-[100%] h-[94vh] md:w-[85%] md:h-[90%] overflow-auto md:p-6 py-14 md:py-12 bg-white rounded-lg shadow-lg z-50 bg-gradient-to-b from-[#cacacafb] to-[#f1f1f1fd]">
+    <div className="fixed inset-0 z-[60] flex items-center justify-center w-full h-full bg-[#2c2c2cbe]  bg-opacity-50">
+      <div className="text-gray-700 relative w-[100%] h-[94vh] md:w-[85%] md:h-[90%] overflow-auto md:p-6 py-14 md:py-12 bg-white rounded-lg shadow-lg z-50 bg-gradient-to-b from-[#cacacafb] to-[#f1f1f1fd] dark:bg-gradient-to-b dark:from-[#2e2e3b] dark:to-[#2d2d3b]">
         <button
           className="absolute top-4 right-8 text-xl hover:scale-125 transition-all duration-300 cursor-pointer"
           onClick={onClose}
@@ -50,6 +50,7 @@ const Modal = ({ onClose, project }) => {
             width="2.4em"
             height="1.5em"
             viewBox="0 0 1024 1024"
+            className="dark:text-[#EAEAEA]"
           >
             <path
               fill="currentColor"
@@ -79,15 +80,21 @@ const Modal = ({ onClose, project }) => {
 
         {/* Título y descripción */}
         <div className="mx-[5%] md:mx-[15%]">
-          <h2 className="text-[26px] font-semibold mb-2 ">{project.title} </h2>
-          <p className="mb-4 text-[17px]">{project.description}</p>
-          <p className="mb-4 text-[15px]">{project.description2}</p>
+          <h2 className="text-[26px] font-semibold mb-2  dark:text-[#EAEAEA]">
+            {project.title}{" "}
+          </h2>
+          <p className="mb-4 text-[17px] dark:text-[#cfcfcf]">
+            {project.description}
+          </p>
+          <p className="mb-4 text-[15px] dark:text-[#cfcfcf]">
+            {project.description2}
+          </p>
 
           {/* Tecnologías */}
-          <h2 className="text-[20px] font-semibold mb-2 ">
+          <h2 className="text-[20px] font-semibold mb-2 dark:text-[#EAEAEA]">
             Tecnologias utilizadas
           </h2>
-          <div className="flex flex-wrap gap-1.5 ">
+          <div className="flex flex-wrap gap-1.5  dark:brightness-90">
             {project.techs.map((techName) => {
               const tech = techs.find((t) => t.name === techName);
               return tech ? (
@@ -101,7 +108,7 @@ const Modal = ({ onClose, project }) => {
               ) : null;
             })}
           </div>
-          <div className=" mt-9 md:flex md:justify-between grid grid-cols-1 gap-4">
+          <div className=" mt-9 md:flex md:gap-10 grid grid-cols-1 gap-4">
             <a
               href="https://github.com/AgusPaez/PsicoApp"
               target="_blank"

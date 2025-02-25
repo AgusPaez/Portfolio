@@ -54,7 +54,7 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.1 }}
             viewport={{ once: true, amount: 0.5 }}
-            className="text-gray-600 font-semibold tracking-wide text-[27.5px] md:text-3xl mb-10 text-center md:text-left"
+            className="text-gray-600 dark:text-[#EAEAEA] font-semibold tracking-wide text-[27.5px] md:text-3xl mb-10 text-center md:text-left"
           >
             Sigamos en contacto.
           </motion.div>
@@ -64,7 +64,7 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
             viewport={{ once: true, amount: 0.5 }}
-            className="text-gray-500 text-center md:text-left"
+            className="text-gray-500 dark:text-[#cfcfcf] text-center md:text-left"
           >
             La colaboracion y la conexion son fundamentales en este mundo
             digital. Tambien puedes seguirme en mi redes sociales para estar al
@@ -82,13 +82,13 @@ const Contact = () => {
               href="google.com"
               className="pr-1 mr-1 scale-110 transition-transform hover:scale-125 duration-300"
             >
-              <i className="devicon-linkedin-plain text-[32px]"></i>
+              <i className="devicon-linkedin-plain text-[32px] dark:text-[#c9c9c9] dark:hover:text-white"></i>
             </a>
             <a
               href="https://github.com/AgusPaez"
               className="pr-1 mr-1  scale-110 transition-transform hover:scale-125"
             >
-              <i className="devicon-github-original text-[32px]"></i>
+              <i className="devicon-github-original text-[32px] dark:text-[#c9c9c9] dark:hover:text-white"></i>
             </a>
           </motion.div>
         </div>
@@ -107,7 +107,7 @@ const Contact = () => {
               name="nombre"
               value={formData.nombre}
               onChange={handleChange}
-              className="bg-[#ffffff] border-[0.5px] border-[#ececec] hover:border-gray-300 h-[150%] md:h-[80%] w-full text-gray-800 px-5 placeholder:text-gray-600  hover:tracking-wider transition-all duration-500"
+              className="bg-[#ffffff] dark:bg-[#c9c9c9] border-[0.5px] border-[#ececec] hover:border-gray-300 h-[150%] md:h-[80%] w-full text-gray-800 px-5 placeholder:text-gray-600  hover:tracking-wider transition-all duration-500"
               placeholder="Nombre"
             />
           </motion.div>
@@ -122,7 +122,7 @@ const Contact = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="bg-[#ffffff] border-[0.5px] border-[#ececec] hover:border-gray-300 h-[150%] md:h-[80%] w-full text-gray-800 px-5 placeholder:text-gray-600 hover:tracking-wide transition-all duration-500"
+              className="bg-[#ffffff] dark:bg-[#c9c9c9] border-[0.5px] border-[#ececec] hover:border-gray-300 h-[150%] md:h-[80%] w-full text-gray-800 px-5 placeholder:text-gray-600 hover:tracking-wide transition-all duration-500"
               placeholder="Correo Electronico"
             />
           </motion.div>
@@ -136,7 +136,7 @@ const Contact = () => {
               name="mensaje"
               value={formData.mensaje}
               onChange={handleChange}
-              className="bg-[#ffffff] border-[0.5px] border-[#ececec] hover:border-gray-300 h-[250%] md:h-[185%] w-full text-gray-800 px-5 pt-3 placeholder:text-gray-600  hover:tracking-wide transition-all duration-500 resize-none"
+              className="bg-[#ffffff] dark:bg-[#c9c9c9] border-[0.5px] border-[#ececec] hover:border-gray-300 h-[250%] md:h-[185%] w-full text-gray-800 px-5 pt-3 placeholder:text-gray-600  hover:tracking-wide transition-all duration-500 resize-none"
               placeholder="Escribi tu mensaje aca"
             />
           </motion.div>
