@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+/* Agrega una transición suave a toda la app */
 
 :root {
   font-family: "Poppins", sans-serif;
@@ -19,7 +21,7 @@
   font-weight: 400;
   font-style: normal;
 }
-/* Estilo para el subrayado animado */
+/* Subrayado en modo claro */
 .link-hover-underline::after {
   content: "";
   position: absolute;
@@ -30,6 +32,21 @@
   background-color: #000;
   transition: width 0.4s ease, left 0.4s ease;
 }
+
+.dark .link-hover-underline::after {
+  background-color: #eaeaea;
+}
+
+.link-hover-underline:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.dark .link-hover-underline:hover::after {
+  width: 100%;
+  left: 0;
+}
+
 .link-hover-underline-active::after {
   content: "";
   position: absolute;
@@ -41,7 +58,6 @@
   transition: width 0.4s ease, left 0.4s ease;
 }
 
-.link-hover-underline:hover::after {
-  width: 100%;
-  left: 0;
+.dark .link-hover-underline-active::after {
+  background-color: #eaeaea;
 }
