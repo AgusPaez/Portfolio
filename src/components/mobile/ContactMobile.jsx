@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
+import { LoadingSpinner } from "../LoadingSpinner";
 const ContactMobile = () => {
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     nombre: "",
     email: "",
@@ -21,9 +23,11 @@ const ContactMobile = () => {
   };
 
   const handleSubmit = (e) => {
+    setLoading(true);
     e.preventDefault();
 
     if (!formData.nombre || !formData.email || !formData.mensaje) {
+      setLoading(false);
       alert("⚠️ Por favor, completa todos los campos.");
       return;
     }
@@ -35,13 +39,19 @@ const ContactMobile = () => {
     emailjs
       .send(serviceID, templateID, templateParams, publicKey)
       .then(() => {
-        console.log(templateParams);
-        alert("✅ ¡Mensaje enviado con éxito!");
+        setLoading(false);
+        setTimeout(() => {
+          alert("✅ ¡Mensaje enviado con éxito!");
+        }, 100);
         setFormData({ nombre: "", email: "", mensaje: "" });
       })
       .catch((error) => {
+        setLoading(false);
+        setTimeout(() => {
+          alert("❌ Hubo un problema al enviar el mensaje. Intenta de nuevo.");
+        }, 100);
+
         console.error("❌ Error al enviar el mensaje:", error);
-        alert("❌ Hubo un problema al enviar el mensaje. Intenta de nuevo.");
       });
   };
 
@@ -78,11 +88,18 @@ const ContactMobile = () => {
             viewport={{ once: true, amount: 0.5 }}
             className="text-black mt-12 text-center md:text-left md:mt-16 text-4xl "
           >
-            <i className="devicon-linkedin-plain dark:text-[#c9c9c9] dark:hover:text-white">
+            <a href="https://www.linkedin.com/in/agustin-paez/" target="_blank">
               {" "}
-              {""}
-            </i>
-            <i className="devicon-github-original dark:text-[#c9c9c9] dark:hover:text-white "></i>
+              <i className="devicon-linkedin-plain dark:text-[#c9c9c9] dark:hover:text-white">
+                {" "}
+                {""}
+              </i>
+            </a>
+
+            <a href="https://github.com/AgusPaez" target="_blank">
+              {" "}
+              <i className="devicon-github-original dark:text-[#c9c9c9] dark:hover:text-white "></i>{" "}
+            </a>
           </motion.div>
         </div>
         <form
@@ -141,9 +158,17 @@ const ContactMobile = () => {
             type="submit"
             className=" mt-20 pt-6 h-[50%] md:mx-0 mx-auto"
           >
-            <button className="h-14  bg-gray-700 mr-auto px-16 text-center cursor-pointer hover:scale-105 hover:bg-gray-900 hover:tracking-widest transition-all duration-500 ">
-              Enviar
+            <button
+              disabled={loading}
+              className="h-14 bg-gray-700 mr-auto px-16 text-center cursor-pointer hover:scale-105 hover:bg-gray-900 hover:tracking-widest transition-all duration-500 "
+            >
+              {loading ? "Cargando..." : "Enviar"}
             </button>
+            {loading && (
+              <div className="absolute mt-15 -ml-40.5">
+                <LoadingSpinner />
+              </div>
+            )}
           </motion.div>
         </form>
       </div>

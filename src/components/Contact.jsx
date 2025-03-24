@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
+import { LoadingSpinner } from "./LoadingSpinner";
 const Contact = () => {
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     nombre: "",
     email: "",
@@ -21,10 +23,12 @@ const Contact = () => {
   };
 
   const handleSubmit = (e) => {
+    setLoading(true);
     e.preventDefault();
 
     if (!formData.nombre || !formData.email || !formData.mensaje) {
       alert("⚠️ Por favor, completa todos los campos.");
+      setLoading(false);
       return;
     }
 
@@ -35,13 +39,19 @@ const Contact = () => {
     emailjs
       .send(serviceID, templateID, templateParams, publicKey)
       .then(() => {
-        console.log(templateParams);
-        alert("✅ ¡Mensaje enviado con éxito!");
+        setLoading(false);
+        setTimeout(() => {
+          alert("✅ ¡Mensaje enviado con éxito!");
+        }, 100);
         setFormData({ nombre: "", email: "", mensaje: "" });
       })
       .catch((error) => {
+        setLoading(false);
+        setTimeout(() => {
+          alert("❌ Hubo un problema al enviar el mensaje. Intenta de nuevo.");
+        }, 100);
+
         console.error("❌ Error al enviar el mensaje:", error);
-        alert("❌ Hubo un problema al enviar el mensaje. Intenta de nuevo.");
       });
   };
 
@@ -79,13 +89,15 @@ const Contact = () => {
             className="text-black mt-10 text-center md:text-left flex gap-2 md:mt-10 text-4xl"
           >
             <a
-              href="google.com"
+              href="https://www.linkedin.com/in/agustin-paez/"
+              target="_blank"
               className="pr-1 mr-1 scale-110 transition-transform hover:scale-125 duration-300"
             >
               <i className="devicon-linkedin-plain text-[32px] dark:text-[#c9c9c9] dark:hover:text-white"></i>
             </a>
             <a
               href="https://github.com/AgusPaez"
+              target="_blank"
               className="pr-1 mr-1  scale-110 transition-transform hover:scale-125"
             >
               <i className="devicon-github-original text-[32px] dark:text-[#c9c9c9] dark:hover:text-white"></i>
@@ -146,11 +158,20 @@ const Contact = () => {
             transition={{ duration: 1, ease: "easeOut", delay: 0.7 }}
             viewport={{ once: true, amount: 0.5 }}
             type="submit"
-            className=" mt-16 pt-6 h-[50%] md:mx-0 mx-auto"
+            className="mt-16 pt-6 h-[50%] md:mx-0 mx-auto relative"
           >
-            <motion.button className="h-14 bg-gray-700 mr-auto px-16 text-center cursor-pointer hover:scale-105 hover:bg-gray-900 hover:tracking-widest transition-all duration-500 ">
-              Enviar
+            <motion.button
+              disabled={loading}
+              className="h-14 bg-gray-700 mr-auto px-16 text-center cursor-pointer hover:scale-105 hover:bg-gray-900 hover:tracking-widest transition-all duration-500 relative"
+            >
+              {loading ? "Cargando..." : "Enviar"}
             </motion.button>
+
+            {loading && (
+              <div className="absolute ">
+                <LoadingSpinner />
+              </div>
+            )}
           </motion.div>
         </form>
       </div>

@@ -80,13 +80,15 @@ const AboutMeMobile = () => {
               className="text-black flex gap-2 mt-6 text-4xl"
             >
               <a
-                href="google.com"
+                href="https://www.linkedin.com/in/agustin-paez/"
+                target="_blank"
                 className="pr-1 mr-1 scale-110 transition-transform hover:scale-125 duration-300 dark:text-[#c9c9c9] dark:hover:text-white"
               >
                 <i className="devicon-linkedin-plain text-[32px]"></i>
               </a>
               <a
                 href="https://github.com/AgusPaez"
+                target="_blank"
                 className="pr-1 mr-1  scale-110 transition-transform hover:scale-125 dark:text-[#c9c9c9] dark:hover:text-white"
               >
                 <i className="devicon-github-original text-[32px] "></i>

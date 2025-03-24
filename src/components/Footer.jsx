@@ -9,7 +9,7 @@ function Footer() {
         </p>
         <div className="mt-4">
           <a
-            href="https://github.com/tu-usuario"
+            href="https://github.com/AgusPaez"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-white mx-3 transition-colors duration-300"
@@ -17,7 +17,7 @@ function Footer() {
             GitHub
           </a>
           <a
-            href="https://www.linkedin.com/in/tu-usuario"
+            href="https://www.linkedin.com/in/agustin-paez/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-white mx-3 transition-colors duration-300"
@@ -25,7 +25,7 @@ function Footer() {
             LinkedIn
           </a>
           <a
-            href="mailto:tuemail@example.com"
+            href="mailto:agus.123.paez@gmail.com"
             className="text-gray-400 hover:text-white mx-3 transition-colors duration-300"
           >
             Email
