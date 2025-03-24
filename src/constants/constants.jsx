@@ -139,33 +139,33 @@ export const projects = [
     ],
     time: 0.4,
   },
-  {
-    id: 2,
-    title: "Dashboard de Análisis",
-    description: "Panel de control con gráficos interactivos y API.",
-    image:
-      "https://blog.magezon.com/wp-content/uploads/2022/03/image-32-1024x526.png",
-    image2:
-      "https://i.pinimg.com/736x/bd/e7/01/bde701ce79f7ddda2dfb7b6886eb221b.jpg",
-    link: "https://tudashboard.com",
-    techs: [
-      "react-original",
-      "typescript-plain",
-      "nodejs-plain",
-      "mongodb-plain",
-    ],
-    time: 0.7,
-  },
-  {
-    id: 3,
-    title: "Blog Personal",
-    description: "Un blog moderno con Next.js y CMS integrado.",
-    image:
-      "https://blog.magezon.com/wp-content/uploads/2022/03/image-32-1024x526.png",
-    image2:
-      "https://i.pinimg.com/736x/bd/e7/01/bde701ce79f7ddda2dfb7b6886eb221b.jpg",
-    link: "https://tublog.com",
-    techs: ["nextjs-original", "typescript-plain", "tailwindcss-original"],
-    time: 0.9,
-  },
+  // {
+  //   id: 2,
+  //   title: "Dashboard de Análisis",
+  //   description: "Panel de control con gráficos interactivos y API.",
+  //   image:
+  //     "https://blog.magezon.com/wp-content/uploads/2022/03/image-32-1024x526.png",
+  //   image2:
+  //     "https://i.pinimg.com/736x/bd/e7/01/bde701ce79f7ddda2dfb7b6886eb221b.jpg",
+  //   link: "https://tudashboard.com",
+  //   techs: [
+  //     "react-original",
+  //     "typescript-plain",
+  //     "nodejs-plain",
+  //     "mongodb-plain",
+  //   ],
+  //   time: 0.7,
+  // },
+  // {
+  //   id: 3,
+  //   title: "Blog Personal",
+  //   description: "Un blog moderno con Next.js y CMS integrado.",
+  //   image:
+  //     "https://blog.magezon.com/wp-content/uploads/2022/03/image-32-1024x526.png",
+  //   image2:
+  //     "https://i.pinimg.com/736x/bd/e7/01/bde701ce79f7ddda2dfb7b6886eb221b.jpg",
+  //   link: "https://tublog.com",
+  //   techs: ["nextjs-original", "typescript-plain", "tailwindcss-original"],
+  //   time: 0.9,
+  // },
 ];
