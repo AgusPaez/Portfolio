@@ -19,7 +19,7 @@ const Technologies = () => {
               Tecnologias
             </a>
           </motion.div>
-          <div className="grid grid-cols-3 md:grid-cols-9 gap-8 justify-center items-center">
+          <div className="grid grid-cols-3 md:grid-cols-9 gap-3 justify-center items-center">
             {techs.map((tech, index) => (
               <div key={index} className="relative">
                 <motion.div
@@ -48,10 +48,10 @@ const Technologies = () => {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true, amount: 0.2 }}
-                  className="relative flex flex-col items-center hover:brightness-125 dark:brightness-110 p-3 rounded-lg shadow-lg transition transform hover:scale-110 duration-200 overflow-hidden"
+                  className="relative flex flex-col items-center hover:brightness-125 dark:brightness-110 p-3 mx-2.5 rounded-lg shadow-lg transition transform hover:scale-110 duration-200 overflow-hidden"
                 >
                   <div
-                    className={`absolute inset-0 bg-gradient-to-br ${tech.gradient} opacity-35`}
+                    className={`absolute inset-0 bg-gradient-to-br ${tech.gradient} opacity-35 `}
                   ></div>
 
                   <i
@@ -85,7 +85,7 @@ const Technologies = () => {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true, amount: 0.2 }}
-                  className="relative text-center dark:text-[#cfcfcf] flex flex-col items-center p-2 m-1 text-md overflow-hidden"
+                  className=" text-center dark:text-[#cfcfcf] flex flex-col items-center p-2 m-1  text-md overflow-hidden"
                 >
                   {tech.nombre}
                 </motion.a>
