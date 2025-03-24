@@ -81,7 +81,7 @@ const AboutMe = () => {
                 className="text-black flex gap-2 mt-6 text-4xl"
               >
                 <a
-                  href="google.com"
+                  href="https://www.linkedin.com/in/agustin-paez/"
                   className="pr-1 mr-1 scale-110 transition-transform hover:scale-125 duration-300"
                 >
                   <i className="devicon-linkedin-plain text-[32px] dark:text-[#c9c9c9] dark:hover:text-white"></i>
