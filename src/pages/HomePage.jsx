@@ -7,6 +7,7 @@ import Contact from "../components/Contact";
 import Technologies from "../components/Technologies";
 import Experience from "../components/Experience";
 import ScrollToTopButton from "../components/ScrollToTopButton";
+import Proyectos from "../components/Proyectos";
 //mobile
 import AboutMeMobile from "../components/mobile/AboutMeMobile";
 import TechnologiesMobile from "../components/mobile/TechnologiesMobile";
@@ -29,7 +30,7 @@ function HomePage() {
       <main className="relative h-[100%]">
         {deviceType === "desktop" ? (
           <div
-            className="absolute top-0 left-0 w-full h-full z-0 bg-gray-200 dark:bg-[#24242e] transition-colors duration-1000 ease-in-out"
+            className="absolute top-0 left-0 w-full h-full z-0 bg-gray-200 dark:bg-[#17171f] transition-colors duration-1000 ease-in-out"
             // style={{
             //   backgroundImage: `url(${fondoImg})`,
             //   filter: "blur(2px)",
@@ -51,12 +52,13 @@ function HomePage() {
           {deviceType === "mobile" ? (
             <>
               <AboutMeMobile />
-              <TechnologiesMobile /> <ExperienceMobile /> <ProjectsMobile />
+              <TechnologiesMobile /> <ExperienceMobile /> <Proyectos />
               <ContactMobile />
             </>
           ) : (
             <>
-              <AboutMe /> <Technologies /> <Experience /> <Projects />
+              <AboutMe /> <Technologies /> <Experience />
+              <Proyectos />
               <Contact />
             </>
           )}

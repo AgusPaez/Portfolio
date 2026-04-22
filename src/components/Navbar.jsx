@@ -7,7 +7,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState(null);
   const [deviceType, setDeviceType] = useState(
-    window.innerWidth <= 768 ? "mobile" : "desktop"
+    window.innerWidth <= 768 ? "mobile" : "desktop",
   );
 
   const getThreshold = () => (window.innerWidth < 768 ? 0.3 : 0.8);
@@ -32,7 +32,7 @@ const Navbar = () => {
           }
         });
       },
-      { threshold: getThreshold() }
+      { threshold: getThreshold() },
     );
 
     sections.forEach((section) => observer.observe(section));
@@ -47,10 +47,10 @@ const Navbar = () => {
     <nav className="bg-[#f0f0f0bb] dark:bg-[#18181893] border-b-[1px] dark:border-b-[#ffffff15] dark:backdrop-blur-[19px] sticky top-0 z-50 w-full  ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 lg:pr-20 ">
         <div className="flex justify-between h-[90px] ">
-          <div className="relative dark:">
-            <div className="absolute left-23 top-8 px-2 ">
-              <a className="w-28 text-black dark:text-[#f0f0f0f1] text-[26px] opacity-0 md:opacity-100 md:text-3xl relative text-center cursor-pointer hover:text-gray-900 py-4 pb-1 text-md hover:tracking-widest font-medium link-hover-underline transition-all duration-700">
-                AP
+          <div className="relative">
+            <div className="absolute  left-23 top-10 px-2 ">
+              <a className="text-black dark:text-[#f0f0f0f1] uppercase text-[16px] opacity-0 lg:opacity-100 md:text-xl relative text-center cursor-pointer hover:text-[#f5f5f5f1] py-2 pb-1 text-md hover:tracking-widest font-medium link-hover-underline transition-all duration-700 whitespace-nowrap">
+                Agustin Paez
               </a>
             </div>
             <motion.div

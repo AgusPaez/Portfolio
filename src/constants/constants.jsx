@@ -112,60 +112,134 @@ export const tools = [
 export const projects = [
   {
     id: 1,
-    title: "Psico App",
+    title: "Sistema Web Autogestión",
     description:
-      "Sitio web que permite el control y manejo de pacientes, desde el lado del profesional y paciente.",
+      "Plataforma web para gestión de contenido y operaciones internas.",
     description2:
-      "Sitio web que permite el control y manejo de pacientes, desde el lado del profesional y paciente. etc etc etc etc etcetc etc etc etc etcetc etc etc etc etcetc etc etc etc etcetc etc etc etc etc",
-    image: psicoAppImg,
-    image2: imgHover1,
-    image2m: aboutmeMobile,
-    image3: loginImg,
-    image3m: adminImgMobile,
-    image4: appoImg,
-    image4m: admin2ImgMobile,
-    image5: controlImg,
-    image6: aboutmeImg,
-    image6m: aboutmeImgMobile,
-    image7: editImg,
-    image7m: patientImg,
-    link: "https://psico-app-iota.vercel.app/",
+      "Desarrollo completo de sistema web con autogestión, consumo de APIs y lógica frontend personalizada para administración dinámica de contenido.",
+    image: "/images/automotores.jpg",
+    image2: "/images/automotores-hover.jpg",
+    image2m: "/images/automotores-mobile.jpg",
+    link: "https://automotoresacosta.com",
     techs: [
       "react-original",
-      "tailwindcss-original",
-      "typescript-plain",
       "nodejs-plain",
+      "javascript-plain",
       "mongodb-plain",
     ],
+    time: 0.2,
+  },
+  {
+    id: 2,
+    title: "Web UX/UI - Geely",
+    description: "Sitio web enfocado en experiencia de usuario y conversión.",
+    description2:
+      "Diseño y desarrollo de interfaz moderna con enfoque en UX/UI, optimización visual y estructura orientada a conversión y navegación intuitiva.",
+    image: "/images/geely.jpg",
+    image2: "/images/geely-hover.jpg",
+    image2m: "/images/geely-mobile.jpg",
+    link: "https://geely-grupoacosta.com",
+    techs: ["react-original", "tailwindcss-original", "javascript-plain"],
+    time: 0.3,
+  },
+  {
+    id: 3,
+    title: "Web UX/UI - Pedernal",
+    description: "Landing moderna con identidad visual de marca.",
+    description2:
+      "Desarrollo de sitio web enfocado en identidad visual, diseño adaptable y experiencia de usuario optimizada para dispositivos móviles.",
+    image: "/images/pedernal.jpg",
+    image2: "/images/pedernal-hover.jpg",
+    image2m: "/images/pedernal-mobile.jpg",
+    link: "https://pedernalargentina.com",
+    techs: ["react-original", "tailwindcss-original", "css3-plain"],
     time: 0.4,
   },
-  // {
-  //   id: 2,
-  //   title: "Dashboard de Análisis",
-  //   description: "Panel de control con gráficos interactivos y API.",
-  //   image:
-  //     "https://blog.magezon.com/wp-content/uploads/2022/03/image-32-1024x526.png",
-  //   image2:
-  //     "https://i.pinimg.com/736x/bd/e7/01/bde701ce79f7ddda2dfb7b6886eb221b.jpg",
-  //   link: "https://tudashboard.com",
-  //   techs: [
-  //     "react-original",
-  //     "typescript-plain",
-  //     "nodejs-plain",
-  //     "mongodb-plain",
-  //   ],
-  //   time: 0.7,
-  // },
-  // {
-  //   id: 3,
-  //   title: "Blog Personal",
-  //   description: "Un blog moderno con Next.js y CMS integrado.",
-  //   image:
-  //     "https://blog.magezon.com/wp-content/uploads/2022/03/image-32-1024x526.png",
-  //   image2:
-  //     "https://i.pinimg.com/736x/bd/e7/01/bde701ce79f7ddda2dfb7b6886eb221b.jpg",
-  //   link: "https://tublog.com",
-  //   techs: ["nextjs-original", "typescript-plain", "tailwindcss-original"],
-  //   time: 0.9,
-  // },
+  {
+    id: 4,
+    title: "Sistema Web TRG",
+    description: "Sistema web con funcionalidades dinámicas y formularios.",
+    description2:
+      "Implementación de lógica personalizada, gestión de contenido y formularios dinámicos para operaciones internas del cliente.",
+    image: "/images/trg.jpg",
+    image2: "/images/trg-hover.jpg",
+    image2m: "/images/trg-mobile.jpg",
+    link: "https://trgsj.com",
+    techs: ["javascript-plain", "nodejs-plain", "html5-plain"],
+    time: 0.5,
+  },
+  {
+    id: 5,
+    title: "Tarjetas Digitales RSVP",
+    description: "Invitaciones digitales con confirmación de asistencia.",
+    description2:
+      "Desarrollo de tarjetas interactivas con sistema RSVP e integración con Google Scripts para almacenamiento y gestión de datos en tiempo real.",
+    image: "/images/invitacion.jpg",
+    image2: "/images/invitacion-hover.jpg",
+    image2m: "/images/invitacion-mobile.jpg",
+    link: "https://invitacion-18-octavio.vercel.app/",
+    techs: ["react-original", "javascript-plain", "google-plain"],
+    time: 0.6,
+  },
 ];
+
+// export const projects = [
+//   {
+//     id: 1,
+//     title: "Psico App",
+//     description:
+//       "Sitio web que permite el control y manejo de pacientes, desde el lado del profesional y paciente.",
+//     description2:
+//       "Sitio web que permite el control y manejo de pacientes, desde el lado del profesional y paciente. etc etc etc etc etcetc etc etc etc etcetc etc etc etc etcetc etc etc etc etcetc etc etc etc etc",
+//     image: psicoAppImg,
+//     image2: imgHover1,
+//     image2m: aboutmeMobile,
+//     image3: loginImg,
+//     image3m: adminImgMobile,
+//     image4: appoImg,
+//     image4m: admin2ImgMobile,
+//     image5: controlImg,
+//     image6: aboutmeImg,
+//     image6m: aboutmeImgMobile,
+//     image7: editImg,
+//     image7m: patientImg,
+//     link: "https://psico-app-iota.vercel.app/",
+//     techs: [
+//       "react-original",
+//       "tailwindcss-original",
+//       "typescript-plain",
+//       "nodejs-plain",
+//       "mongodb-plain",
+//     ],
+//     time: 0.4,
+//   },
+// {
+//   id: 2,
+//   title: "Dashboard de Análisis",
+//   description: "Panel de control con gráficos interactivos y API.",
+//   image:
+//     "https://blog.magezon.com/wp-content/uploads/2022/03/image-32-1024x526.png",
+//   image2:
+//     "https://i.pinimg.com/736x/bd/e7/01/bde701ce79f7ddda2dfb7b6886eb221b.jpg",
+//   link: "https://tudashboard.com",
+//   techs: [
+//     "react-original",
+//     "typescript-plain",
+//     "nodejs-plain",
+//     "mongodb-plain",
+//   ],
+//   time: 0.7,
+// },
+// {
+//   id: 3,
+//   title: "Blog Personal",
+//   description: "Un blog moderno con Next.js y CMS integrado.",
+//   image:
+//     "https://blog.magezon.com/wp-content/uploads/2022/03/image-32-1024x526.png",
+//   image2:
+//     "https://i.pinimg.com/736x/bd/e7/01/bde701ce79f7ddda2dfb7b6886eb221b.jpg",
+//   link: "https://tublog.com",
+//   techs: ["nextjs-original", "typescript-plain", "tailwindcss-original"],
+//   time: 0.9,
+// },
+// ];

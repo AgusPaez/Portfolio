@@ -7,7 +7,7 @@ const Technologies = () => {
   return (
     <>
       <section id="tecnologias" className="backdrop-brightness-125">
-        <div className="text-gray-800 pb-8 pt-[50px] text-center max-w-6xl mx-auto px-4 sm:px-6 lg:px-10 lg:pr-20 border-b-[1.5px] border-[#ffffff]">
+        <div className="text-gray-800 pb-8 pt-[50px] text-center max-w-6xl mx-auto px-4 sm:px-6 lg:px-10 lg:pr-20 border-b-[1.5px] border-[#89898940]">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -21,9 +21,8 @@ const Technologies = () => {
           </motion.div>
           <div className="grid grid-cols-3 md:grid-cols-9 gap-3 justify-center items-center">
             {techs.map((tech, index) => (
-              <div key={index} className="relative">
+              <div key={index} className="relative ">
                 <motion.div
-                  key={index}
                   custom={tech.time}
                   variants={{
                     hidden: (i) => ({
@@ -48,10 +47,10 @@ const Technologies = () => {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true, amount: 0.2 }}
-                  className="relative flex flex-col items-center hover:brightness-125 dark:brightness-110 p-3 mx-2.5 rounded-lg shadow-lg transition transform hover:scale-110 duration-200 overflow-hidden"
+                  className="hover:drop-shadow-[0_0_10px_rgba(0,119,181,0.8)] relative flex flex-col items-center hover:brightness-125 dark:brightness-110 p-3 mx-2.5 rounded-lg shadow-lg transition transform hover:scale-110 duration-200 overflow-hidden"
                 >
                   <div
-                    className={`absolute inset-0 bg-gradient-to-br ${tech.gradient} opacity-35 `}
+                    className={`absolute inset-0 bg-gradient-to-br ${tech.gradient} opacity-35`}
                   ></div>
 
                   <i
@@ -60,7 +59,6 @@ const Technologies = () => {
                 </motion.div>
 
                 <motion.a
-                  key={index}
                   custom={tech.time}
                   variants={{
                     hidden: (i) => ({
@@ -114,7 +112,6 @@ const Technologies = () => {
             {tools.map((tool, index) => (
               <div key={index} className="relative">
                 <motion.div
-                  key={index}
                   custom={tool.time}
                   variants={{
                     hidden: (i) => ({
@@ -139,7 +136,7 @@ const Technologies = () => {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true, amount: 0.2 }}
-                  className="relative flex flex-col items-center p-3 mx-[22%] dark:brightness-110 hover:brightness-125 rounded-lg shadow-lg transition transform hover:scale-110 duration-200 overflow-hidden"
+                  className="relative hover:drop-shadow-[0_0_10px_rgba(0,119,181,0.8)] flex flex-col items-center p-3 mx-[22%] dark:brightness-110 hover:brightness-125 rounded-lg shadow-lg transition transform hover:scale-110 duration-200 overflow-hidden"
                 >
                   <div
                     className={`absolute inset-0 bg-gradient-to-br ${tool.gradient} opacity-35 `}
@@ -161,14 +158,13 @@ const Technologies = () => {
                   ) : (
                     <div className="dark:text-[#EAEAEA]">
                       <i
-                        className={`devicon-${tool.name}  text-5xl relative`}
+                        className={`devicon-${tool.name}  text-5xl relative `}
                       ></i>
                     </div>
                   )}
                 </motion.div>
 
                 <motion.a
-                  key={index}
                   custom={tool.time}
                   variants={{
                     hidden: (i) => ({

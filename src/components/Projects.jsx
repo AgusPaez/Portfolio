@@ -33,7 +33,7 @@ const Projects = () => {
         <div className="absolute top-0 left-0 w-full h-full backdrop-blur-[2px]"></div>
       </div>
 
-      <div className="relative h-full w-full max-w-7xl mx-auto px-8 sm:px-6 lg:px-10 lg:pr-20 z-10">
+      <div className="relative h-full w-full max-w-8xl mx-auto px-8 sm:px-6 lg:px-10 lg:pr-20 z-10">
         <motion.h2
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -46,7 +46,7 @@ const Projects = () => {
           </a>
         </motion.h2>
         <div className="w-full flex justify-center">
-          <div className="max-w-[26rem] flex justify-items-center  gap-8">
+          <div className=" flex justify-items-center  gap-8">
             {projects.map((project, index) => (
               <motion.div
                 key={project.id}
