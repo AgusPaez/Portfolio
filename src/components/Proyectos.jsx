@@ -31,7 +31,7 @@ export const projects = [
     title: "WebSite UX/UI",
     client: "Geely Grupo Acosta",
     image: "/geely.png",
-    url: "https://geely-grupoacosta.com",
+    url: "https://geely-git-cliente-preview-aguspaezs-projects.vercel.app/",
     category: "Websites",
     type: "UX/UI",
     description:
@@ -55,7 +55,7 @@ export const projects = [
     title: "Landing page con sistema de autogestión",
     client: "TRG San Juan",
     image: "/trg.png",
-    url: "https://trgsj.com",
+    url: "https://transromerogroup.vercel.app/",
     category: "Landing Pages",
     type: "Sistema",
     description:
@@ -106,7 +106,10 @@ export default function Proyectos() {
   const [activeFilter, setActiveFilter] = useState("Todos");
 
   return (
-    <section className="relative w-full min-h-screen bg-[#020617] text-white px-6 py-20 overflow-hidden">
+    <section
+      id="proyectos"
+      className="relative w-full min-h-screen bg-[#020617] text-white px-6 py-20 overflow-hidden"
+    >
       {/* Imagen de fondo */}
       <div
         className="absolute inset-0 bg-cover bg-center scale-105"

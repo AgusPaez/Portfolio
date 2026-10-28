@@ -16,30 +16,58 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setDeviceType(window.innerWidth <= 768 ? "mobile" : "desktop");
+  //   };
+
+  //   window.addEventListener("resize", handleResize);
+
+  //   const sections = document.querySelectorAll("section");
+  //   const observer = new IntersectionObserver(
+  //     (entries) => {
+  //       entries.forEach((entry) => {
+  //         if (entry.isIntersecting) {
+  //           setActiveSection(entry.target.id);
+  //         }
+  //       });
+  //     },
+  //     { threshold: getThreshold() },
+  //   );
+
+  //   sections.forEach((section) => observer.observe(section));
+
+  //   return () => {
+  //     window.removeEventListener("resize", handleResize);
+  //     sections.forEach((section) => observer.unobserve(section));
+  //   };
+  // }, []);
   useEffect(() => {
-    const handleResize = () => {
-      setDeviceType(window.innerWidth <= 768 ? "mobile" : "desktop");
-    };
+    const sections = document.querySelectorAll(
+      "#about_me, #tecnologias, #experience, #proyectos, #contacto",
+    );
 
-    window.addEventListener("resize", handleResize);
-
-    const sections = document.querySelectorAll("section");
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
+        const visibleSections = [...entries]
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+        if (visibleSections.length > 0) {
+          setActiveSection(visibleSections[0].target.id);
+        }
       },
-      { threshold: getThreshold() },
+      {
+        root: null,
+        rootMargin: "-15% 0px -65% 0px",
+        threshold: 0,
+      },
     );
 
     sections.forEach((section) => observer.observe(section));
 
     return () => {
-      window.removeEventListener("resize", handleResize);
-      sections.forEach((section) => observer.unobserve(section));
+      observer.disconnect();
     };
   }, []);
 
